@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HEBOX CONTACTO</title>
+  <style>
+    /* Fuente */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url("portada.jpg");
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Tarjeta */
+    .card {
+      background: #0000009f;
+      border-radius: 20px;
+      padding: 55px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 85 10px 50px rgba(5,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    /* Foto de perfil */
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 4px solid #f1f1f1;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    }
+
+    /* Botones */
+    .btn {
+      display: block;
+      width: 93%;
+      margin: 25px 0;
+      padding: 15px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      border-radius: 50px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .whatsapp { background: #25D366; }
+    .instagram { background: #E1306C; }
+    .facebook { background: #1877F2; }
+    .correo { background: #FF6F00; }
+
+    /* Footer */
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      color: #fc0000;
+      font-size: 12px;
+      text-shadow: 0px 0px 0px rgb(0, 0, 0);
+    }
+
+    footer p {
+      margin: 10px 0;
+    }
+
+    /* Animación de entrada */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="logo.png" alt="Foto de Perfil" class="logo.png" width="100px">
+
+    <!-- Botones -->
+    <a href="https://wa.me/5214774106680?text=Hola%20quiero%20una%20cotizacion%20a%20mayoreo" target="_blank" class="btn whatsapp">WhatsApp 1</a>
+    <a href="https://wa.me/524775819539?text=Hola%20me%20interesa%20el%20precio%20por%20mayoreo" target="_blank" class="btn whatsapp">WhatsApp 2</a>
+    <a href="https://www.instagram.com/hebox_oficial" target="_blank" class="btn instagram">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61574971918658" target="_blank" class="btn facebook">Facebook</a>
+    <a href="mailto:calzado_hebox@hotmail.com" target="_blank" class="btn correo">Correo Electrónico</a>
+  </div>
+
+  <footer>
+    <p><b>100% hecho en México</b></p>
+    <p>Todos los derechos reservados</p>
+    <p>Página realizada por <b>Arteskala Publicidad</b></p>
+  </footer>
+
+</body>
+</html>
