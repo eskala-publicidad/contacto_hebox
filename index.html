@@ -7,11 +7,11 @@
   <style>
     /* Fuente */
     :root{
-      --card-bg: rgba(185, 247, 255, 0.62);
+      --card-bg: rgba(255, 255, 255, 0.95);
       --accent-white: #ffffff;
-      --radius: 18px;
-      --gap: 16px;
-      --max-card-width: 420px;
+      --radius: 12px;
+      --gap: 12px;
+      --max-card-width: 400px;
     }
 
     *{box-sizing: border-box}
@@ -23,7 +23,7 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(180deg,#dbdbdb 0%, #3480ac 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #ff0000 100%);
       color: var(--accent-white);
       display: flex;
       justify-content: center;
@@ -39,13 +39,15 @@
     .card {
       background: var(--card-bg);
       border-radius: var(--radius);
-      padding: 28px 22px;
+      padding: 40px 30px;
       width: 100%;
       max-width: var(--max-card-width);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.315);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
       text-align: center;
       animation: fadeIn 350ms ease;
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 3;
     }
 
     /* Foto de perfil */
@@ -62,7 +64,7 @@
     }
 
     /* Botones */
-    .btn-group{display:flex;flex-direction:column;gap:var(--gap);align-items:center}
+    .btn-group{display:flex;flex-direction:column;gap:var(--gap);align-items:center;width:100%}
 
     .btn {
       display: inline-flex;
@@ -70,26 +72,32 @@
       justify-content: center;
       width: 100%;
       max-width: 360px;
-      padding: 12px 16px;
+      padding: 14px 20px;
       text-decoration: none;
       color: var(--accent-white);
-      font-weight: 700;
-      border-radius: 999px;
-      transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 8px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border: 0;
       cursor: pointer;
+      letter-spacing: 0.3px;
     }
 
-    .btn:focus{outline:3px solid #ffffff55;outline-offset:3px}
+    .btn:focus{outline:2px solid rgba(255,255,255,0.5);outline-offset:2px}
     .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+    }
+    
+    .btn:active {
+      transform: translateY(-1px);
     }
 
-    .whatsapp { background: #25D366; }
-    .instagram { background: #E1306C; }
-    .facebook { background: #1877F2; }
-    .correo { background: #FF6F00; }
+    .whatsapp { background: linear-gradient(135deg, #25D366 0%, #20BA58 100%); }
+    .instagram { background: linear-gradient(135deg, #E1306C 0%, #C41E3A 100%); }
+    .facebook { background: linear-gradient(135deg, #1877F2 0%, #0A5FD7 100%); }
+    .correo { background: linear-gradient(135deg, #FF6F00 0%, #E55A00 100%); }
 
     /* Footer */
     footer {
@@ -141,18 +149,62 @@
       footer{font-size:12px}
     }
     
+    /* Logo de fondo */
+    .logo-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .logo-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: waterWave 8s ease-in-out infinite;
+    }
+
+    /* Animación tipo onda de agua */
+    @keyframes waterWave {
+      0%, 100% {
+        transform: scale(1) translateY(0);
+        filter: blur(0px);
+      }
+      25% {
+        transform: scale(1.02) translateY(-8px);
+        filter: blur(1px);
+      }
+      50% {
+        transform: scale(1) translateY(0);
+        filter: blur(0px);
+      }
+      75% {
+        transform: scale(0.98) translateY(8px);
+        filter: blur(1px);
+      }
+    }
+
     /* Asegurar centrado absoluto en pantallas grandes */
-    .page-wrap{display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:100vh}
+    .page-wrap{display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:100vh;position:relative;z-index:2}
   </style>
 </head>
 <body>
+  <div class="logo-bg">
+    <img src="logo.png" alt="Logotipo HEBOX" />
+  </div>
 
   <div class="page-wrap">
     <main class="card" role="region" aria-label="Contacto HEBOX">
-    <img src="logo.png" alt="Logotipo de HEBOX" class="profile-pic" width="110" height="110">
-
-    <h1 style="color:var(--accent-white);margin:12px 0 6px;font-size:20px;">🎄</h1>
-    <p style="color:#fff8;margin:0 0 18px;font-size:13px;">Contacto y redes sociales</p>
+    <h1 style="color:#333;margin:0 0 8px;font-size:28px;font-weight:700;">HEBOX</h1>
+    <p style="color:#666;margin:0 0 24px;font-size:14px;font-weight:400;">Contacto y redes sociales</p>
 
     <nav class="btn-group" aria-label="Enlaces de contacto">
       <a href="https://wa.me/5214774106680?text=Hola%20quiero%20una%20cotizacion%20a%20mayoreo" target="_blank" rel="noopener noreferrer" class="btn whatsapp" aria-label="Enviar mensaje por WhatsApp a HEBOX">WhatsApp 1</a>
